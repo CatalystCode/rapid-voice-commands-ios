@@ -1,24 +1,15 @@
 //
-//  MainPageViewController.h
+//  CognitiveServicesViewController.h
 //  RapidVoiceCommands
 //
 //  Created by Andrei Ermilov on 25/08/2016.
 //  Copyright © 2016 Andrei Ermilov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "RapidVoiceCommands.h"
 #import <SpeechSDK/SpeechRecognitionService.h>
 
-// Text Views enumeration
-typedef NS_ENUM(NSUInteger, TextViewElement)
-{
-    PartialResultTextView,
-    FinalResultTextView,
-    LuisResultTextView,
-    ActionIssuedTextView
-};
-
-@interface MainPageViewController : UIViewController <SpeechRecognitionProtocol>
+@interface CognitiveServicesViewController : UIViewController <SpeechRecognitionProtocol>
 
 @property (nonatomic, nullable)     NSString * luisAppId;
 @property (nonatomic, nullable)     NSString * luisSubscriptionId;

@@ -1,58 +1,77 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mp7-Ua-AXn">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Page View Controller-->
+        <!--Speech SDK-->
+        <scene sceneID="ysh-lp-Fgf">
+            <objects>
+                <tabBarController title="Speech SDK" id="mp7-Ua-AXn" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="h9e-q9-UqK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="W0M-4B-eDY"/>
+                        <segue destination="Ddq-LJ-4QH" kind="relationship" relationship="viewControllers" id="7aW-WA-8Nh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uz-H9-Gjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1578" y="-272"/>
+        </scene>
+        <!--Cognitive Services-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainPageViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Cognitive Services" customClass="CognitiveServicesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Main View">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rapid Voice Commands" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0y-Wr-F9Q">
-                                <rect key="frame" x="139" y="28" width="182" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cognitive Services" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0y-Wr-F9Q">
+                                <frame key="frameInset" minX="139" minY="28" width="182" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vv-q8-qB8" userLabel="Left View">
-                                <rect key="frame" x="20" y="110" width="240" height="128"/>
+                                <frame key="frameInset" minX="20" minY="110" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Partial Recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFi-Ph-H6Q" userLabel="Partial Recognition">
-                                        <rect key="frame" x="34" y="54" width="107" height="21"/>
+                                        <frame key="frameInset" minX="34" minY="54" width="107" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Recognition Result" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjH-nV-kVl" userLabel="PartialResultTextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <frame key="frameInset" width="240" height="128"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Final text recognised" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaO-k1-tHP">
-                                        <rect key="frame" x="99" y="54" width="42" height="21"/>
+                                        <frame key="frameInset" minX="99" minY="54" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Final text result" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jq-ah-eao" userLabel="FinalTextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <frame key="frameInset" width="240" height="128"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="4Jq-ah-eao" firstAttribute="height" secondItem="XjH-nV-kVl" secondAttribute="height" id="2FS-ta-knB"/>
                                     <constraint firstItem="XjH-nV-kVl" firstAttribute="height" secondItem="5vv-q8-qB8" secondAttribute="height" multiplier="0.5" id="Fch-mj-hX2"/>
@@ -69,34 +88,34 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k77-IX-e5m" userLabel="Right View">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <frame key="frameInset" minX="180" minY="236" width="240" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Luis Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cg-Qd-Fdx">
-                                        <rect key="frame" x="57" y="54" width="84" height="21"/>
+                                        <frame key="frameInset" minX="57" minY="54" width="84" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Luis result" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knB-WU-vdf" userLabel="LuisResultTextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <frame key="frameInset" width="240" height="128"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Action Issued" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRH-eO-Cd5">
-                                        <rect key="frame" x="99" y="54" width="42" height="21"/>
+                                        <frame key="frameInset" minX="99" minY="54" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="No action found to match the apps dictionary. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPw-aK-NyI" userLabel="ActionIssuedTextView">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <frame key="frameInset" width="240" height="128"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="knB-WU-vdf" firstAttribute="leading" secondItem="k77-IX-e5m" secondAttribute="leading" id="9TZ-Mu-gNw"/>
                                     <constraint firstItem="9cg-Qd-Fdx" firstAttribute="bottom" secondItem="knB-WU-vdf" secondAttribute="top" id="9eM-ap-c3x"/>
@@ -113,32 +132,33 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-7g-cc8">
-                                <rect key="frame" x="275" y="541" width="46" height="30"/>
+                                <frame key="frameInset" minX="275" minY="541" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Start Listening">
-                                    <color key="titleShadowColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="StartListeningButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TA1-P0-dW5"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5vv-q8-qB8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0SE-uh-Exb"/>
                             <constraint firstAttribute="trailing" secondItem="k77-IX-e5m" secondAttribute="trailing" id="8Ln-HX-VXk"/>
+                            <constraint firstItem="q0y-Wr-F9Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="G4a-ZY-nPN"/>
                             <constraint firstItem="7AE-7g-cc8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Grc-tM-uq3"/>
-                            <constraint firstItem="q0y-Wr-F9Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HmN-vA-U1r"/>
                             <constraint firstItem="5vv-q8-qB8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.33" id="NMg-D3-LO0"/>
                             <constraint firstItem="q0y-Wr-F9Q" firstAttribute="bottom" secondItem="5vv-q8-qB8" secondAttribute="top" constant="-50" id="QCf-Nx-uVU"/>
                             <constraint firstItem="k77-IX-e5m" firstAttribute="top" secondItem="5vv-q8-qB8" secondAttribute="top" id="SY6-zs-lh8"/>
                             <constraint firstItem="k77-IX-e5m" firstAttribute="height" secondItem="5vv-q8-qB8" secondAttribute="height" id="Shy-Ma-8qO"/>
                             <constraint firstItem="5vv-q8-qB8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="blz-Qo-dvc"/>
-                            <constraint firstItem="7AE-7g-cc8" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-50" id="v6i-ay-BOF"/>
+                            <constraint firstItem="7AE-7g-cc8" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-50" id="hg7-8B-0Jk"/>
                             <constraint firstItem="q0y-Wr-F9Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vfq-Y4-6OZ"/>
                             <constraint firstItem="k77-IX-e5m" firstAttribute="width" secondItem="5vv-q8-qB8" secondAttribute="width" id="xVy-ud-Ijf"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Cognitive Services" image="second" id="vQO-wf-wGm"/>
                     <connections>
                         <outlet property="ActionIssuedTextView" destination="qPw-aK-NyI" id="kJy-7q-1zx"/>
                         <outlet property="FinalResultTextView" destination="4Jq-ah-eao" id="fXy-mC-n0Y"/>
@@ -149,6 +169,157 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-612" y="90"/>
+        </scene>
+        <!--iOS Speech SDK-->
+        <scene sceneID="Vfb-0y-jTE">
+            <objects>
+                <viewController id="Ddq-LJ-4QH" userLabel="iOS Speech SDK" customClass="SpeechSDKViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fJO-s9-RQZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wil-cQ-pVP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b8f-R0-Uwx" userLabel="Main View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="iOS 10 Speech SDK" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ov2-P4-pzZ">
+                                <frame key="frameInset" minX="139" minY="28" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgs-Hb-t8S" userLabel="Left View">
+                                <frame key="frameInset" minX="20" minY="110" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Partial Recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoG-Zx-l0C" userLabel="Partial Recognition">
+                                        <frame key="frameInset" minX="34" minY="54" width="107" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Recognition Result" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-D5-6Yd" userLabel="PartialResultTextView">
+                                        <frame key="frameInset" width="240" height="128"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Final text recognised" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAm-mT-ZSw">
+                                        <frame key="frameInset" minX="99" minY="54" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Final text result" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYZ-c0-2lQ" userLabel="FinalTextView">
+                                        <frame key="frameInset" width="240" height="128"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JoG-Zx-l0C" firstAttribute="bottom" secondItem="kdo-D5-6Yd" secondAttribute="top" id="CIq-Qf-R4g"/>
+                                    <constraint firstItem="JoG-Zx-l0C" firstAttribute="centerX" secondItem="Pgs-Hb-t8S" secondAttribute="centerX" id="FyB-Vc-9Hm"/>
+                                    <constraint firstItem="VYZ-c0-2lQ" firstAttribute="top" secondItem="ZAm-mT-ZSw" secondAttribute="bottom" id="Pyi-Kd-hMy"/>
+                                    <constraint firstItem="kdo-D5-6Yd" firstAttribute="width" secondItem="Pgs-Hb-t8S" secondAttribute="width" id="Uu9-mb-x9J"/>
+                                    <constraint firstItem="VYZ-c0-2lQ" firstAttribute="width" secondItem="kdo-D5-6Yd" secondAttribute="width" id="cuO-0D-bYq"/>
+                                    <constraint firstItem="VYZ-c0-2lQ" firstAttribute="height" secondItem="kdo-D5-6Yd" secondAttribute="height" id="ezf-W5-9uV"/>
+                                    <constraint firstItem="JoG-Zx-l0C" firstAttribute="top" secondItem="Pgs-Hb-t8S" secondAttribute="top" id="gL1-XF-okX"/>
+                                    <constraint firstItem="ZAm-mT-ZSw" firstAttribute="top" secondItem="kdo-D5-6Yd" secondAttribute="bottom" id="iCl-yC-cTv"/>
+                                    <constraint firstItem="kdo-D5-6Yd" firstAttribute="height" secondItem="Pgs-Hb-t8S" secondAttribute="height" multiplier="0.5" id="il9-vQ-ScA"/>
+                                    <constraint firstItem="VYZ-c0-2lQ" firstAttribute="leading" secondItem="kdo-D5-6Yd" secondAttribute="leading" id="lf8-5X-JF8"/>
+                                    <constraint firstItem="kdo-D5-6Yd" firstAttribute="leading" secondItem="Pgs-Hb-t8S" secondAttribute="leading" id="obo-FB-1cq"/>
+                                    <constraint firstItem="ZAm-mT-ZSw" firstAttribute="centerX" secondItem="Pgs-Hb-t8S" secondAttribute="centerX" id="p9Y-PV-6de"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DRT-nH-An5" userLabel="Right View">
+                                <frame key="frameInset" minX="180" minY="236" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Luis Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAD-Lt-V91">
+                                        <frame key="frameInset" minX="57" minY="54" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Luis result" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyt-zz-cY5" userLabel="LuisResultTextView">
+                                        <frame key="frameInset" width="240" height="128"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Action Issued" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2c-bp-ThU">
+                                        <frame key="frameInset" minX="99" minY="54" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="No action found to match the apps dictionary. " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TW-s9-rHP" userLabel="ActionIssuedTextView">
+                                        <frame key="frameInset" width="240" height="128"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Pyt-zz-cY5" firstAttribute="leading" secondItem="DRT-nH-An5" secondAttribute="leading" id="56H-vX-Dkt"/>
+                                    <constraint firstItem="5TW-s9-rHP" firstAttribute="width" secondItem="Pyt-zz-cY5" secondAttribute="width" id="Aun-gp-pCO"/>
+                                    <constraint firstItem="M2c-bp-ThU" firstAttribute="centerX" secondItem="DRT-nH-An5" secondAttribute="centerX" id="D91-vk-U4E"/>
+                                    <constraint firstItem="5TW-s9-rHP" firstAttribute="height" secondItem="Pyt-zz-cY5" secondAttribute="height" id="JeR-xV-7OZ"/>
+                                    <constraint firstItem="Pyt-zz-cY5" firstAttribute="width" secondItem="DRT-nH-An5" secondAttribute="width" id="KEL-QH-qiQ"/>
+                                    <constraint firstItem="5TW-s9-rHP" firstAttribute="leading" secondItem="Pyt-zz-cY5" secondAttribute="leading" id="Wo8-Yc-k75"/>
+                                    <constraint firstItem="5TW-s9-rHP" firstAttribute="top" secondItem="M2c-bp-ThU" secondAttribute="bottom" id="X5R-Ia-tNQ"/>
+                                    <constraint firstItem="VAD-Lt-V91" firstAttribute="top" secondItem="DRT-nH-An5" secondAttribute="top" id="ZLM-Qg-ZY3"/>
+                                    <constraint firstItem="Pyt-zz-cY5" firstAttribute="height" secondItem="DRT-nH-An5" secondAttribute="height" multiplier="0.5" id="ZPT-SH-FPQ"/>
+                                    <constraint firstItem="VAD-Lt-V91" firstAttribute="bottom" secondItem="Pyt-zz-cY5" secondAttribute="top" id="mhg-ew-900"/>
+                                    <constraint firstItem="VAD-Lt-V91" firstAttribute="centerX" secondItem="DRT-nH-An5" secondAttribute="centerX" id="wSP-vG-TvH"/>
+                                    <constraint firstItem="M2c-bp-ThU" firstAttribute="top" secondItem="Pyt-zz-cY5" secondAttribute="bottom" id="yI8-8t-eWT"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-f2-Dle">
+                                <frame key="frameInset" minX="275" minY="541" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Start Listening">
+                                    <color key="titleShadowColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartListeningButtonPressed:" destination="Ddq-LJ-4QH" eventType="touchUpInside" id="BdT-yu-b9P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pgs-Hb-t8S" firstAttribute="height" secondItem="b8f-R0-Uwx" secondAttribute="height" multiplier="0.33" id="JpD-hR-3mj"/>
+                            <constraint firstItem="fRr-f2-Dle" firstAttribute="bottom" secondItem="wil-cQ-pVP" secondAttribute="top" constant="-50" id="TM5-QG-3nR"/>
+                            <constraint firstItem="DRT-nH-An5" firstAttribute="top" secondItem="Pgs-Hb-t8S" secondAttribute="top" id="V7z-EY-lO8"/>
+                            <constraint firstItem="Pgs-Hb-t8S" firstAttribute="width" secondItem="b8f-R0-Uwx" secondAttribute="width" multiplier="0.5" id="bCD-aA-p92"/>
+                            <constraint firstItem="DRT-nH-An5" firstAttribute="width" secondItem="Pgs-Hb-t8S" secondAttribute="width" id="iin-SB-nS6"/>
+                            <constraint firstItem="Ov2-P4-pzZ" firstAttribute="centerX" secondItem="b8f-R0-Uwx" secondAttribute="centerX" id="k23-bf-zpi"/>
+                            <constraint firstItem="Pgs-Hb-t8S" firstAttribute="leading" secondItem="b8f-R0-Uwx" secondAttribute="leading" id="lbE-6s-fBY"/>
+                            <constraint firstItem="Ov2-P4-pzZ" firstAttribute="bottom" secondItem="Pgs-Hb-t8S" secondAttribute="top" constant="-50" id="mRC-Jp-Pgp"/>
+                            <constraint firstItem="Ov2-P4-pzZ" firstAttribute="top" secondItem="fJO-s9-RQZ" secondAttribute="bottom" id="ouc-Op-vhl"/>
+                            <constraint firstItem="DRT-nH-An5" firstAttribute="height" secondItem="Pgs-Hb-t8S" secondAttribute="height" id="tlG-Jf-2El"/>
+                            <constraint firstItem="fRr-f2-Dle" firstAttribute="centerX" secondItem="b8f-R0-Uwx" secondAttribute="centerX" id="trP-sT-RfU"/>
+                            <constraint firstAttribute="trailing" secondItem="DRT-nH-An5" secondAttribute="trailing" id="vCR-mV-k55"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Speech SDK" image="first" id="hvs-c5-Opw" userLabel="iOS Speech SDK"/>
+                    <connections>
+                        <outlet property="ActionIssuedTextView" destination="5TW-s9-rHP" id="Ik5-ig-Mcw"/>
+                        <outlet property="FinalResultTextView" destination="VYZ-c0-2lQ" id="qTZ-Ib-dil"/>
+                        <outlet property="LuisResultTextView" destination="Pyt-zz-cY5" id="EAA-xw-dYX"/>
+                        <outlet property="PartialResultTextView" destination="kdo-D5-6Yd" id="08l-WY-rax"/>
+                        <outlet property="StartListeningButton" destination="fRr-f2-Dle" id="jhl-cx-bmt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vaF-Rc-HHX" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-636" y="-586"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
 </document>

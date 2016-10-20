@@ -1,14 +1,14 @@
 //
-//  MainPageViewController.m
+//  CognitiveServicesViewController.m
 //  RapidVoiceCommands
 //
 //  Created by Andrei Ermilov on 25/08/2016.
 //  Copyright © 2016 Andrei Ermilov. All rights reserved.
 //
 
-#import "MainPageViewController.h"
+#import "CognitiveServicesViewController.h"
 
-@interface MainPageViewController ()
+@interface CognitiveServicesViewController ()
 
 @property (strong, nonatomic) IBOutlet UITextView *PartialResultTextView;
 @property (strong, nonatomic) IBOutlet UITextView *FinalResultTextView;
@@ -16,14 +16,14 @@
 @property (strong, nonatomic) IBOutlet UITextView *ActionIssuedTextView;
 @property (strong, nonatomic) IBOutlet UIButton *StartListeningButton;
 
-// Start Listening button pressed event
-- (IBAction)StartListeningButtonPressed:(id)sender;
-
 // Converts an integer error code to an error string.
 - (NSString*)convertSpeechErrorToString:(int)errorCode;
 
 // Try and recognise the phrase locally before submiting to LUIS.
 - (Boolean)tryAndRecognisePhrase:(NSString *)phrase;
+
+// Start the microphone and recognition process
+- (IBAction)StartListeningButtonPressed:(id)sender;
 
 // Clears the text from all text views.
 - (void)clearText;
@@ -33,7 +33,7 @@
 
 @end
 
-@implementation MainPageViewController
+@implementation CognitiveServicesViewController
 {
 @private
     // The command defintions.
@@ -52,6 +52,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self clearText];
     
     // Initialize.
@@ -86,10 +87,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)StartListeningButtonPressed:(id)sender
-{
+- (IBAction)StartListeningButtonPressed:(id)sender {
     // We are starting a new session, clear all text.
     [self clearText];
+    
+    [self updateText:@"Speak a command!" forUIElement:PartialResultTextView];
     
     OSStatus status = [_micClient startMicAndRecognition];
     if (status) {
@@ -103,7 +105,7 @@
     [self updateText:@"" forUIElement:ActionIssuedTextView];
     [self updateText:@"" forUIElement:LuisResultTextView];
     [self updateText:@"" forUIElement:FinalResultTextView];
-    [self updateText:@"" forUIElement:PartialResultTextView];
+    [self updateText:@"Press start listening and speak a command!" forUIElement:PartialResultTextView];
 }
 
 - (void)updateText:(NSString*)text forUIElement:(TextViewElement)textViewElement
@@ -124,6 +126,7 @@
             case PartialResultTextView:
                 _PartialResultTextView.text = text;
                 break;
+            
             default:
                 break;
         }
@@ -173,10 +176,9 @@
         
         [self updateText:[phrase DisplayText] forUIElement:FinalResultTextView];
         
-        // Check if the partial recognition issued a command.
         if(!_commandExecuted)
         {
-            [self updateText:@"Command was not found in local dictionary." forUIElement:ActionIssuedTextView];
+            [self updateText:@"Command was not found in local dictionary. Reaching to LUIS for intent extraction" forUIElement:ActionIssuedTextView];
         }
     }
 }
@@ -185,9 +187,8 @@
  * Called when a final response is received and its intent is parsed
  * @param result The intent result.
  */
--(void)onIntentReceived:(IntentResult*) result
-{
-    // We already executed a command, LUIS is not needed.
+-(void)onIntentReceived:(IntentResult*) result {
+    
     if(_commandExecuted)
     {
         return;
@@ -221,7 +222,7 @@
     }
     else
     {
-        [self updateText:@"The intent returned from LUIS was not found in the local dictionary. If appropiate, include this intent in the RapidCommandsDictionary, or train the model." forUIElement:ActionIssuedTextView];
+        [self updateText:@"The intent returned from LUIS was not found in the local dictionary. If appropiate, include this intent in the Rapid Commands Dictionary, or train the model." forUIElement:ActionIssuedTextView];
     }
 }
 
@@ -272,7 +273,7 @@
 {
     switch ((SpeechClientStatus)errorCode) {
         case SpeechClientStatus_SecurityFailed:         return @"SpeechClientStatus_SecurityFailed";
-        case SpeechClientStatus_LoginFailed:            return @"LoginFailed. Please make sure you added the correct keys in Info.plist";
+        case SpeechClientStatus_LoginFailed:            return @"SpeechClientStatus_LoginFailed";
         case SpeechClientStatus_Timeout:                return @"SpeechClientStatus_Timeout";
         case SpeechClientStatus_ConnectionFailed:       return @"SpeechClientStatus_ConnectionFailed";
         case SpeechClientStatus_NameNotFound:           return @"SpeechClientStatus_NameNotFound";
