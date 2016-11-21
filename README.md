@@ -1,8 +1,8 @@
 # Rapid voice commands iOS
 
-An Objective-C sample app that shows how to design and implement accurate and fast voice commands on iOS. The architecture of this solution was used in Cities Unlocked, a collaboration between Microsoft and Guide Dogs to help visually impaired navigate cities. The users keep the phone in their pocket and use a custom headset to issue voice commands like "Where am I?", "What's around me" and "Take me to Starbucks".
+An Objective-C sample app that shows how to design and implement accurate and fast voice commands on iOS. The architecture of this solution was used in Cities Unlocked, a collaboration between Microsoft and Guide Dogs in the UK to enable visually impaired users navigate cities independently with the use of an iOS mobile app, remote control and a custom headset.
 
-You can find an in-depth explanation of the solution in the blog post: [Developing an accurate and fast speech recognition for visually impaired users on iOS]().
+You can find an in-depth explanation of the solution in the code story: [Improving speech and intent recognition on iOS](https://www.microsoft.com/developerblog/real-life-code/2016/11/18/Improving-speech-and-intent-recognition-on-iOS.html).
 
 ## What you will find in this repo
 - iOS Cognitive Services Speech SDK integration to establish a real-time stream and return partial and final string results as the user is speaking.
