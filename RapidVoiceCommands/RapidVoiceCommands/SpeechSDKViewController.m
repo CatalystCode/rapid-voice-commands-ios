@@ -158,7 +158,7 @@
 {
     NSString* encodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
     
-    NSString * luisString = [NSString stringWithFormat:@"https://api.projectoxford.ai/luis/v1/application?id=%@&subscription-key=%@&q=%@", _luisAppId, _luisSubscriptionId, encodedQuery];
+    NSString * luisString = [NSString stringWithFormat:@"https://api.projectoxford.ai/luis/v2.0/apps/%@?subscription-key=%@&q=%@", _luisAppId, _luisSubscriptionId, encodedQuery];
     NSURL * luisURL = [NSURL URLWithString:luisString];
     
     // Construct the URL request.
